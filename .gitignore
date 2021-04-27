@@ -11,3 +11,9 @@ build/
 .npm
 .eslintcache
 .DS_Store
+.package-lock.json
+server.cfg
+altv-server.exe
+data/
+cache/
+modules/
