@@ -1,0 +1,13 @@
+logs
+*.log
+npm-debug.log*
+node_modules/
+coverage
+resources/
+crashdumps/
+build/
+.vscode
+!.vscode/tasks.js
+.npm
+.eslintcache
+.DS_Store

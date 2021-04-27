@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+  }
+  
+  *:focus {
+    outline: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', 'Segoe UI Symbol', Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    overflow: hidden;
+  }
+  
+  .shblock {
+    width: 70vw;
+    height: 70vh;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, .7) 0%, rgba(255, 255, 255, 0) 70%);
+    position: absolute;
+    top: -35vh;
+    left: -35vw;
+    transition: all .2s;
+    opacity: .5;
+    z-index: -1;
+  }
+  
+  .shblock.active {
+    opacity: .9;
+  }
+  
+  .chatbox {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 450px;
+    height: 250px;
+    padding: 15px;
+  }
+
+  .chatbox p {
+    color: #fff;
+    line-height: 20px;
+    padding: 5px 0;
+    margin: 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    word-break: break-all;
+    display: inline-block;
+    font-family: 'Roboto';
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    -webkit-text-stroke: rgba(0, 0, 0, .5);
+    -webkit-text-stroke-width: 0.2px;
+  }
+
+  .chatbox p b {
+    font-weight: 400;
+  }
+  
+  .chatbox p b {
+    font-weight: 500;
+  }
+
+  .chatbox.active .msglist {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .chatbox.active .messages {
+    background: none;
+  }
+
+  
+  .msglist {
+    overflow-y: hidden;
+    height: 100%;
+  }
+
+  .messages { 
+    padding: 15px 20px 15px 20px;
+    /*transition: all .1s ease-in-out;*/
+    opacity: .8;
+  }
+
+  .messages.closed {
+    /*background: rgba(0, 0, 0, 0.5);*/
+  }
+
+  .messages.glow {
+    opacity: 1;
+  }
+
+  .msglist.opened {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .overflowed {
+    -webkit-mask-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%,  rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 100%);
+  }
+  
+  .msginput {
+      display: none;
+      width: 100%;
+  }
+  
+  .msginput input {
+    background: rgba(0, 0, 0, .5);
+    border: 0;
+    padding: 15px;
+    width: 430px;
+    margin-top: 10px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-family: 'Roboto';
+    letter-spacing: 0.5px;
+    font-weight: 300;
+  }
+  
+  .msginput input::selection {
+      background-color: #fff;
+      color: #000;
+  }
+  
+  .msgsubmit {
+      font-size: 23px;
+      width: 65px;
+      height: 41px;
+      position: relative;
+      top: 5px;
+      right: 4px;
+      border: 0;
+      background: rgba(0,0,0,.5);
+      color: #fff;
+      transition: all .3s;
+  }
+  
+  .msgsubmit::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 70%;
+      margin-top: -1px;
+      margin-left: -0.5px;
+      background: rgba(255,255,255,.6);
+      transition: all .3s;
+  }
+  
+  .msgsubmit:hover {
+      background: rgba(0,0,0,.55);
+  }
+  
+  
+  @media screen and (max-width: 2560px) {
+      body {
+          font-size: 20px;
+      }
+      .chatbox {
+          width: 600px;
+          height: 400px;
+      }
+      .msginput input {
+          width: 580px;
+          margin-top: 20px;
+      }
+  }
+  @media screen and (max-width: 1440px) {
+    body {
+      font-size: 16px;
+    }
+    .chatbox {
+      width: 400px;
+      height: 300px;
+    }
+    .msginput input {
+      width: 380px;
+      margin-top: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 1280px) {
+      body {
+          font-size: 14px;
+      }
+      .chatbox {
+          width: 400px;
+          height: 300px;
+      }
+      .msginput input {
+          width: 380px;
+          margin-top: 10px;
+      }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .chatbox {
+      width: 350px;
+      height: 200px;
+    }
+    .chatbox p {
+      line-height: 16px;
+    }
+    .msginput input {
+      width: 330px;
+      height: 15px;
+      margin-top: 10px;
+    }
+  }
+  
